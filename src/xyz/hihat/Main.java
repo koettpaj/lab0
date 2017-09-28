@@ -1,20 +1,28 @@
 package xyz.hihat;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        Person jag = new Person();
-        Student kompis;
-        try{
-            kompis= new Student();
-            System.out.println(kompis);}
+        int count=0;
+        List list= new ArrayList();
+        while(list.size()<11){
+            try{
+                Student kompis= new Student();
+                list.add(kompis);}
 
-        catch(java.lang.IllegalArgumentException e1){
-            System.out.println("fuck");
+            catch(java.lang.IllegalArgumentException e1){
+                System.out.println("bad guess dude");
+            }
+
         }
 
-        System.out.println(jag);
+        System.out.println(list);
+
+
 
 
     }
@@ -61,6 +69,10 @@ class Student extends Person{
             throw new IllegalArgumentException("Invalid year");}
         year=inYear;
 
+    }
+
+    public int getYear(){
+        return year;
     }
 
     public String toString(){
