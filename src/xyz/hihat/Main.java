@@ -9,13 +9,17 @@ public class Main {
     public static void main(String[] args) {
         int count=0;
         List list= new ArrayList();
-        while(list.size()<11){
+        while(list.size()<5){
+            Person p = new Person();
+            list.add(p);
+        }
+        while(list.size()<10){
             try{
                 Student kompis= new Student();
                 list.add(kompis);}
 
             catch(java.lang.IllegalArgumentException e1){
-                System.out.println("bad guess dude");
+                System.out.println("bad guess dude!");
             }
 
         }
@@ -31,7 +35,7 @@ public class Main {
 class Person {
     protected int age;
     protected String name;
-    static String[] firstNames={"Ahmed","Berit","Carl","Doris","Edward","Frida","Gustav","Henrietta","Jesper","Kristina"};
+    static String[] firstNames={"Ahmed","Berit","Carl","Doris","Edward","Frida","Gustav","Henrietta","Jesper","Kristina"};          //Du glömde I....
 
     public Person(){
         this(firstNames[(int)(Math.random()*firstNames.length)],((int) (Math.random() * (100- 15) + 15)));
